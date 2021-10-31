@@ -1,0 +1,19 @@
+main: net.zatrit.srp.SimpleResourcePack
+name: SimpleResourcePack
+version: ${version}
+author: zatrit
+description: Simplified resource pack sender
+api-version: 1.17
+load: POSTWORLD
+
+commands:
+    genhash:
+        description: Regenerates resource pack hash
+        permission: srp.genhash
+        usage: Syntax error! Perhaps you meant /<command>?
+        aliases: [regenhash]
+
+permissions:
+    srp.genhash:
+        default: op
+        description: Allows to use command genhash
