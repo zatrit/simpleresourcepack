@@ -74,6 +74,8 @@ public class ConfigData implements Serializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }else {
+            logger.warning("Resource pack URL is NULL, couldn't generate hash");
         }
     }
 }
