@@ -1,7 +1,9 @@
 package net.zatrit.srp;
 
+import com.google.gson.Gson;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.configuration.file.YamlRepresenter;
+import org.json.simple.JSONObject;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.nodes.Tag;
@@ -24,8 +26,11 @@ public class ConfigData implements Serializable {
 
         if (f.exists()) {
             FileInputStream is = new FileInputStream(f);
+            Gson gson=new Gson();
             var map = yml.loadAs(is, LinkedHashMap.class);
-            data = yml.loadAs(is, ConfigData.class);
+            var json = new JSONObject(map);
+            data = gson.fromJson(json.toJSONString(), ConfigData.class);
+
             is.close();
         }
 

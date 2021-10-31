@@ -42,6 +42,7 @@ public class SimpleResourcePack extends JavaPlugin {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(command.getName().equals("genhash")){
             getConfigData().generateHash();
+            logger.warning("Resource pack URL is NULL, couldn't generate hash");
             return true;
         }
 
