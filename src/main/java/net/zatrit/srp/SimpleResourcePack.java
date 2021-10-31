@@ -10,13 +10,13 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public class SimpleResourcePack extends JavaPlugin {
-    public static Logger logger;
+    public static Logger LOGGER;
     private ConfigData config;
     public final File CONFIG_FILE = new File(getDataFolder(), "config.yml");
 
     @Override
     public void onEnable() {
-        logger = getLogger();
+        LOGGER = getLogger();
 
         try {
             config = ConfigData.fromFile(CONFIG_FILE);

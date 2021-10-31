@@ -12,6 +12,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.LinkedHashMap;
 
+import static net.zatrit.srp.SimpleResourcePack.LOGGER;
 import static net.zatrit.srp.Utils.MESSAGE_DIGEST;
 import static net.zatrit.srp.Utils.checksum;
 
@@ -75,7 +76,7 @@ public class ConfigData implements Serializable {
                 e.printStackTrace();
             }
         }else {
-            logger.warning("Resource pack URL is NULL, couldn't generate hash");
+            LOGGER.warning("Resource pack URL is NULL, couldn't generate hash");
         }
     }
 }
