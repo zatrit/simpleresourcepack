@@ -1,6 +1,9 @@
 package net.zatrit.srp;
 
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,5 +36,15 @@ public class SimpleResourcePack extends JavaPlugin {
 
     public ConfigData getConfigData() {
         return config;
+    }
+
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+        if(command.getName().equals("genhash")){
+            getConfigData().generateHash();
+            return true;
+        }
+
+        return super.onCommand(sender, command, label, args);
     }
 }
