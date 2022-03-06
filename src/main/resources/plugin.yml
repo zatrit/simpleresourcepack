@@ -5,6 +5,7 @@ author: zatrit
 description: Simplified resource pack sender
 api-version: 1.17
 load: POSTWORLD
+website: https://github.com/zatrit/simpleresourcepack
 
 commands:
     genhash:
