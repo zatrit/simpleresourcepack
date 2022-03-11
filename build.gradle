@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'net.zatrit'
@@ -33,3 +34,16 @@ tasks.withType(JavaCompile).configureEach {
     // Minecraft 1.17 (21w19a) upwards uses Java 16.
     it.options.release = 16
 }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'net.zatrit.srp'
+            artifactId = 'simpleresourcepack'
+            version = project.version
+
+            from components.java
+        }
+    }
+}
+
